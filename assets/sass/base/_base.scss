@@ -1,6 +1,8 @@
 // -----------------------------------------------------------------------------
 // This file contains very basic styles.
 // -----------------------------------------------------------------------------
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
 /**
  * Set up a decent box model on the root element
  */
@@ -14,6 +16,7 @@ html {
  * making all elements inheriting from the root box-sizing value
  * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
  */
+
 *,
 *::before,
 *::after {
