@@ -1,0 +1,21 @@
+/* Error: Undefined mixin.
+ *    ,
+ * 31 | /   @include on-event {
+ * 32 | |     color: $text-color;
+ * 33 | |     text-decoration: underline;
+ * 34 | \   }
+ *    '
+ *   sass/base/_base.scss 31:3  @forward
+ *   sass/base/_index.scss 1:1  @use
+ *   sass/style.scss 10:1       root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined mixin.\a    \2577 \a 31 \2502  \250c    @include on-event {\a 32 \2502  \2502      color: $text-color;\a 33 \2502  \2502      text-decoration: underline;\a 34 \2502  \2514    }\a    \2575 \a   sass/base/_base.scss 31:3  @forward\a   sass/base/_index.scss 1:1  @use\a   sass/style.scss 10:1       root stylesheet";
+}
