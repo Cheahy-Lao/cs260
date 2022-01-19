@@ -4,10 +4,21 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-        uglify: {
-            target: {
+        htmlmin: {                                     // Task
+            dist: {                                      // Target
+                options: {                                 // Target options
+                    removeComments: true,
+                    collapseWhitespace: true
+                },
+                files: {                                   // Dictionary of files
+                    'dist/index.html': 'index.html',     // 'destination': 'source'
+                }
+            },
+        },
+        sass: {
+            dist: {
                 files: {
-                    'assets/js/app.min.js': ['assets/js/*.js', '!assets/js/*.min.js']
+                    'dist/css/style.css': 'assets/sass/style.scss'
                 }
             }
         },
@@ -18,14 +29,14 @@ module.exports = function (grunt) {
             },
             target: {
                 files: {
-                    'assets/css/styles.min.css': ['assets/css/*.css', 'assets/css/animate css/animate.min.css', '!assets/css/*.min.css'],
+                    'dist/css/styles.min.css': ['assets/css/*.css', 'assets/css/animate css/animate.min.css', '!assets/css/*.min.css'],
                 }
             }
         },
-        sass: {
-            dist: {
+        uglify: {
+            target: {
                 files: {
-                    'assets/css/style.css': 'assets/sass/style.scss'
+                    'dist/js/app.min.js': ['assets/js/*.js', '!assets/js/*.min.js']
                 }
             }
         },
@@ -39,11 +50,12 @@ module.exports = function (grunt) {
 
 
     // Load the plugin that provides tasks.
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task(s).
-    grunt.registerTask('default', ['uglify', 'watch']);
+    grunt.registerTask('default', ['htmlmin', 'uglify', 'cssmin', 'watch']);
 };

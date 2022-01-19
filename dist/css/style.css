@@ -24,9 +24,7 @@ a {
   color: #e50050;
   text-decoration: none;
 }
-a:hover,
-a:active,
-a:focus {
+a:hover, a:active, a:focus {
   color: #222222;
   text-decoration: underline;
 }
@@ -95,8 +93,7 @@ a:focus {
  */
 body {
   color: #222222;
-  font: normal 125%/1.4 "Open Sans", "Helvetica Neue Light", "Helvetica Neue",
-    "Helvetica", "Arial", sans-serif;
+  font: normal 125%/1.4 "Open Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
 .btn {
