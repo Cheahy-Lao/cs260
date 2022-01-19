@@ -18,7 +18,7 @@ module.exports = function (grunt) {
         sass: {
             dist: {
                 files: {
-                    'dist/css/style.css': 'assets/sass/style.scss'
+                    'assets/css/style.css': 'assets/sass/style.scss'
                 }
             }
         },
@@ -29,7 +29,7 @@ module.exports = function (grunt) {
             },
             target: {
                 files: {
-                    'dist/css/styles.min.css': ['dist/css/*.css', 'assets/css/animate css/animate.min.css', '!assets/css/*.min.css', 'animate.compat.css'],
+                    'dist/css/styles.min.css': ['assets/css/modern-normalize.css', 'assets/css/style.css', 'assets/css/animate css/animate.min.css'],
                 }
             }
         },
