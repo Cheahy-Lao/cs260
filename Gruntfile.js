@@ -29,7 +29,7 @@ module.exports = function (grunt) {
             },
             target: {
                 files: {
-                    'dist/css/styles.min.css': ['assets/css/*.css', 'assets/css/animate css/animate.min.css', '!assets/css/*.min.css'],
+                    'dist/css/styles.min.css': ['assets/css/*.css', 'assets/css/animate css/animate.min.css', '!assets/css/*.min.css', 'animate.compat.css'],
                 }
             }
         },
